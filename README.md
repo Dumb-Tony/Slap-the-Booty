@@ -1,38 +1,34 @@
 # SLAP THE BOOTY
 
-A tiny original score-chasing browser arcade game. Emma is a consenting adult female cartoon character wearing an opaque tracksuit; there is no storyline. The realistic character was generated with the built-in image-generation tool; the arena and glove are procedural canvas art; the tone is slapstick, fully clothed, and non-explicit.
+[Play in your browser](https://dumb-tony.github.io/Slap-the-Booty/)
+
+An original, fully clothed slapstick arcade game. Emma is an adult cartoon stunt volunteer in a loose jersey, oversized opaque padded shorts, elbow guards and trainers. No storyline: pull back, whap, chase a bigger number.
 
 ## Play
 
-Open `index.html` directly in any modern browser. No build, install, or server required. Optional Google Fonts enhance the typography; system fonts work offline.
+Open `index.html` directly in a modern browser; no install or build required.
 
-- Click **Let's get slappy**. Bring the glove into the left wind-up box, then swipe right through the target. Repeat immediately after the short recovery.
-- Touch: drag from the left zone through the shorts.
-- Keyboard alternative: hold Space to charge, release to hit. Escape opens the menu; M toggles sound.
-- Gold unlocks at 2,000 points; cosmic at 4,000. Cosmetics have identical power.
+- Move the glove into the left wind-up zone, then swipe right through the padded shorts.
+- Pull left again to retry after the short recovery.
+- Touch: drag from the left zone through the target. Phones work best sideways.
+- Hold Space and release for the keyboard charge alternative. Escape or Menu opens the menu; M toggles sound.
+- Gold unlocks at 2,000 points, cosmic at 4,000. All gloves have equal scoring power.
+- Wobble ranges from 0–300%, defaulting to 200%. It changes animation and the visible target geometry, not the score formula.
 
 ## Mini GDD
 
-**Pillars:** understand it in seconds; an exaggerated whap on every successful swing; instant pursuit of a bigger number. A neon-lit sports studio sits inside a chunky faux-2000s arcade cabinet.
+**Core:** a one-input velocity game with immediate exaggerated feedback and instant retries. The new cartoon silhouette pairs a normal jersey with comically oversized protective padding.
 
-**Core loop:** enter wind-up zone → arm → accelerate across the target → receive points and feedback → pull back to retry. Misses ask the player to re-arm. Hits have a 520ms recovery to prevent double scoring.
+**Scoring:** pointer displacement over a recent 90ms window measures logical pixels/second, capped at 6,500. Swept segment/ellipse collision catches fast swipes. Centered hits transfer full power; glancing hits lose power. Points = velocity × (0.35 + 0.65 × quality). Displayed slap MPH is a fictional arcade conversion. A 520ms recovery prevents double scoring. Keyboard charging is capped below the fastest mouse score.
 
-**Scoring:** recent pointer displacement over a rolling 90ms window gives logical pixels/second (capped at 6,500). A swept segment/ellipse collision prevents fast events tunneling through the shorts. Quality depends on distance from the target's vertical center at entry. Points = velocity × (0.35 + 0.65 × quality). The displayed “slap MPH” is an arcade conversion, not a physical speed measurement. Viewport coordinates normalize to an 1100 × 535 arena. Keyboard mode is a charge-based accessibility alternative, capped below the fastest pointer score.
+**Physics:** two coupled damped springs drive costume displacement, squash/stretch, shear and torso recoil. Lower damping produces several visible rebounds. The ponytail follows the upper body, and legs connect the moving costume to planted shoes. Spring integration uses small substeps and bounded travel. Costume scale is constrained to stay positive. The collision ellipse and target marker follow the costume's position and scale. This is deliberately cartoon motion, not biomechanical simulation.
 
-**Juice:** strength-scaled synthesized noise/thump sound, brief character hit stop, two coupled damped springs deforming a 12 × 24 textured mesh, screen shake, confetti, radial impact lines, glove trails, praise tiers, score popup, and record banner. No audio assets or borrowed game assets.
+**Feedback:** synthesized strength-scaled slap audio, hit stop, shake, confetti, impact rays, trails, score popups and personal-best banners. Local storage preserves best score, glove selection and mute. Blocked storage gracefully falls back to a session-only game.
 
-**Persistence:** best score, selected unlocked glove and mute preference are stored locally, with graceful fallback if browser storage is blocked. No accounts, analytics, networking gameplay, or server scoreboard. Browser storage is device/origin-specific.
+## Build and verification
 
-**Scope:** one character, one arena, three cosmetic hands. Future candidates: alternate stunt volunteers, daily score seeds, more reactive scenery. No progression grind between attempts.
+Everything needed to play is in `index.html`: procedural Canvas 2D artwork, UI, physics and synthesized audio. Optional Google Fonts fall back to system fonts offline. Artwork is resolution independent and follows display pixel density up to 3.5×. No game framework, account or server is needed.
 
-## Implementation
+Run `node tests.cjs` for 19 deterministic regression checks. See `TESTING.md` for browser replay results and limits. GitHub Pages deploys from the root of `main`.
 
-The entire playable game, including an embedded character image, is `index.html`: semantic HTML controls, responsive CSS, Canvas 2D rendering, Web Audio synthesis, and localStorage. No dependencies, framework, build process or secrets. `node tests.cjs` runs deterministic scoring/collision and state regression checks using a minimal DOM/canvas harness. Browser interaction checks complement these tests; synthetic replays do not establish subjective mouse feel on real hardware.
-
-Deploy via GitHub Pages from the root of `main`.
-
-## Visual edition and limits
-
-The character is an original AI-generated realistic 2D render, not a realtime 3D model. The source asset is 941 × 1672 pixels, not native 4K. Canvas rendering follows display pixel density up to 3.5×. Jiggle is a stylized spring-and-mesh simulation with two coupled impact regions, spatial falloff, damping, pinned surrounding body, and adjustable intensity from 0–200%; it is not a biomechanical simulation. The tracksuit render replaced the cartoon after the user requested realism. The first requested shorts asset was rejected by the image service; a neutral sports-uniform render succeeded.
-
-`assets/emma.png` retains the source image; `ART-PROMPT.md` records the final generation prompt. The source is also embedded in the HTML so direct file opening works offline. Small phones work best in landscape; touch and keyboard alternatives are available.
+The previous realistic portrait in `assets/emma.png` and its generation notes in `ART-PROMPT.md` are retained as historical source assets; the current game does not load them. The supplied reference image is not included in this project.

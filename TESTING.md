@@ -1,11 +1,17 @@
-# Verification
+# Cartoon update verification
 
-- `node tests.cjs`: 16 passing deterministic checks: fast swept collisions, misses, velocity cap, arming, perfect hits, double-score prevention, retry, glancing accuracy, idle-pointer handling, menu reset, storage persistence/fallback, render paths, damped-spring settling, pinned mesh regions, and zero-jiggle geometry.
-- Local browser, automated UI input: started from title; dragged through the visible target (5,856 points, 85% quality); dragged above target (miss with score unchanged); pulled back and successfully retried; toggled mute; returned to menu. No browser errors or warnings were reported.
-- Reload retained personal best and mute preference.
-- Inspected desktop and 390 × 844 layouts. Phones are supported, but landscape provides a larger aiming area. Touch logic is implemented; physical touchscreen feel has not been tested.
-- These are automated input replays and visual checks, not a human subjective mouse-feel assessment. Audio synthesis was exercised in-browser but not independently listened to or calibrated.
+`node tests.cjs`: 19 checks pass. Coverage includes swept hits and misses, capped velocity, arming, perfect accuracy, double-score prevention, retries, glancing hits, idle-pointer handling, menu reset, storage persistence/fallback, rendering, settling, enlarged target geometry, collision following costume motion, bounded scale at maximum wobble, zero wobble, and a visible rebound through the resting position.
+
+Local browser automated input replays:
+
+- Started game and hit the visible enlarged target: 6,066 points at 90% quality.
+- Swiped above the costume: miss, with score unchanged.
+- Increased Wobble to 300%, then hit again: 6,263 points at 94% quality.
+- Inspected resting and impact frames: squash/stretch stays within the arena and legs follow the moving padding while shoes remain planted.
+- No browser warnings or errors were reported.
+
+These are automated input replays and visual checks, not a human mouse-feel assessment. Physical touchscreen feel and audio playback have not been independently assessed. Existing desktop/mobile UI remains responsive; small phones work best in landscape. This update changes the character, target geometry and physics rather than page layout.
 
 ## Known limits
 
-The realistic portrait is 941 × 1672, not native 4K. The interactive character is a 2D spring-deformed image, not a 3D skeletal character or physically accurate soft-body simulation. Cosmetic unlocks are local and all have equal scoring power. Local scores are not tamper-proof.
+The collision is an ellipse approximating the costume rather than a per-pixel mask. Cartoon motion uses coupled springs and affine deformation, not full 3D soft-body simulation. High scores are browser-local and not tamper-proof.
