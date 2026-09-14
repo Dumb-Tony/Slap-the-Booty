@@ -1,34 +1,39 @@
-# SLAP THE BOOTY
+# SLAP THE BOOTY — 3D studio edition
 
 [Play in your browser](https://dumb-tony.github.io/Slap-the-Booty/)
 
-An original, fully clothed slapstick arcade game. Emma is an adult cartoon stunt volunteer in a loose jersey, oversized opaque padded shorts, elbow guards and trainers. No storyline: pull back, whap, chase a bigger number.
+Standalone slapstick arcade gameplay with an actual textured character mesh, real lighting, contact shadows and a 3D glove.
 
-## Play
+## Character and art direction
 
-Open `index.html` directly in a modern browser; no install or build required.
+The primary reference is the generated adult woman in a loose teal/magenta tracksuit, white trainers and a brown ponytail, looking over her shoulder. The reference is reconstructed using Meshy image-to-3D through Higgsfield. Warm gold key lighting, cool fill and pink rim lighting carry the stage presentation. This is single-image reconstruction; unseen geometry is inferred rather than captured or scanned.
 
-- Move the glove into the left wind-up zone, then swipe right through the padded shorts.
-- Pull left again to retry after the short recovery.
-- Touch: drag from the left zone through the target. Phones work best sideways.
-- Hold Space and release for the keyboard charge alternative. Escape or Menu opens the menu; M toggles sound.
-- Gold unlocks at 2,000 points, cosmic at 4,000. All gloves have equal scoring power.
-- Wobble ranges from 0–300%, defaulting to 200%. It changes animation and the visible target geometry, not the score formula.
+The character remains fully clothed. Her resting anatomy is not enlarged by gameplay; the animation is broad stylized garment recoil.
+
+## Controls
+
+Move left to wind up; swipe right through the visible target. Pull left again for instant retry after recovery. Touch uses a drag. Space charges a keyboard hit, Escape opens the menu, and M mutes. Local best scores unlock cosmetic glove colors. Wobble controls recoil intensity.
+
+## Runtime
+
+Three.js renders the GLB with PBR materials, studio lights, environment reflections and contact shadows. The model is normalized to human scale and the target projects from the character into the gameplay plane. The glove follows the pointer at a fixed depth in front of the model.
+
+Two coupled springs drive a smooth, spatially weighted deformation of the garment area. Every frame starts from rest geometry to prevent accumulated drift. Feet and head remain anchored. This is a stylized reaction, not a full soft-body simulation.
+
+The game keeps its pointer-velocity scoring, swept collision detection, impact freeze, particles, sound and local score persistence. The character must finish loading before play begins. A clear error message handles unavailable WebGL or asset-loading failures.
+
+The shipped HTML embeds the renderer and GLB for direct offline opening. No runtime package or CDN downloads are needed other than optional web fonts. Standalone source GLB and authored renderer source accompany the build.
+
+## Validation
+
+See `TESTING.md` for exact final checks. Run `node tests.cjs` for 16 gameplay checks. Run `node src/test-cloth.mjs` for deformation checks. To rebuild: `cd src`, `npm ci`, `npm run build`.
 
 ## Mini GDD
 
-**Core:** a one-input velocity game with immediate exaggerated feedback and instant retries. The new cartoon silhouette pairs a normal jersey with comically oversized protective padding.
+One hand, one target, immediate feedback and a bigger personal best.
 
 **Scoring:** pointer displacement over a recent 90ms window measures logical pixels/second, capped at 6,500. Swept segment/ellipse collision catches fast swipes. Centered hits transfer full power; glancing hits lose power. Points = velocity × (0.35 + 0.65 × quality). Displayed slap MPH is a fictional arcade conversion. A 520ms recovery prevents double scoring. Keyboard charging is capped below the fastest mouse score.
 
-**Physics:** two coupled damped springs drive costume displacement, squash/stretch, shear and torso recoil. Lower damping produces several visible rebounds. The ponytail follows the upper body, and legs connect the moving costume to planted shoes. Spring integration uses small substeps and bounded travel. Costume scale is constrained to stay positive. The collision ellipse and target marker follow the costume's position and scale. This is deliberately cartoon motion, not biomechanical simulation.
+## Asset
 
-**Feedback:** synthesized strength-scaled slap audio, hit stop, shake, confetti, impact rays, trails, score popups and personal-best banners. Local storage preserves best score, glove selection and mute. Blocked storage gracefully falls back to a session-only game.
-
-## Build and verification
-
-Everything needed to play is in `index.html`: procedural Canvas 2D artwork, UI, physics and synthesized audio. Optional Google Fonts fall back to system fonts offline. Artwork is resolution independent and follows display pixel density up to 3.5×. No game framework, account or server is needed.
-
-Run `node tests.cjs` for 19 deterministic regression checks. See `TESTING.md` for browser replay results and limits. GitHub Pages deploys from the root of `main`.
-
-The previous realistic portrait in `assets/emma.png` and its generation notes in `ART-PROMPT.md` are retained as historical source assets; the current game does not load them. The supplied reference image is not included in this project.
+`assets/emma-3d.glb` is a portable textured mesh reconstructed by Meshy 7 through Higgsfield. It contains 31,201 triangles and one PBR material. The mesh is static; the game supplies garment deformation at runtime. No skeletal animation or full soft-body solver is included. The reference image remains in `assets/emma.png`. Visual quality depends on the generated geometry and texture; this is not a native 4K scan.

@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "esbuild": "0.28.2",
+    "three": "0.186.0"
+  },
+  "scripts": {
+    "build": "esbuild renderer.js --bundle --format=iife --outfile=renderer.bundle.js --minify && node build.cjs",
+    "test": "node test-cloth.mjs && node ../tests.cjs"
+  }
+}

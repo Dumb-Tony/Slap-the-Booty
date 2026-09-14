@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#252244"><title>SLAP THE BOOTY • Whack to the future</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=Inter:wght@500;700;800&display=swap');
+:root{color-scheme:dark;--ink:#252244;--cream:#fff6dc;--pink:#ff638b;--yellow:#ffe45e}*{box-sizing:border-box}body{margin:0;background:#252244;color:var(--cream);font-family:Inter,Arial,sans-serif;background-image:radial-gradient(#ffffff0c 1px,transparent 1px);background-size:16px 16px}button{font:800 14px Inter,Arial;cursor:pointer;color:var(--ink);border:3px solid var(--ink);box-shadow:3px 4px 0 var(--ink);border-radius:9px;background:var(--cream);padding:11px 18px}button:hover{filter:brightness(1.08);transform:translateY(-1px)}button:active{transform:translate(2px,2px);box-shadow:1px 2px 0 var(--ink)}button:focus-visible{outline:3px solid #76f4d1;outline-offset:4px}header{max-width:1180px;margin:22px auto 16px;display:flex;align-items:center;justify-content:space-between;padding:0 20px}.brand{font-family:'Barlow Condensed',Impact,sans-serif;font-size:25px;letter-spacing:1px}.brand span{color:var(--pink)}.tag{font-size:10px;letter-spacing:2px;color:#c4bcd5;margin-top:4px}.header-right{display:flex;gap:15px;align-items:center;font-size:11px;color:#c4bcd5}#mute{background:#373354;color:var(--cream);border-color:#55506d;box-shadow:none;padding:9px 12px}main{max-width:1140px;margin:auto;padding:0 20px}.marquee{display:flex;justify-content:space-between;align-items:center;font-size:10px;letter-spacing:2px;padding:12px 4px;color:#c9c0db}.live{color:#7cf1c9}.live:before{content:'●';margin-right:7px}.cabinet{border:4px solid #151329;border-radius:18px;overflow:hidden;box-shadow:0 12px 0 #17142e,0 25px 50px #0004;background:#ffefca}.hud{display:grid;grid-template-columns:1fr 1fr 1fr;background:var(--cream);color:var(--ink);padding:17px 26px;border-bottom:3px solid var(--ink)}.stat{border-right:2px solid #25224420;padding:0 20px}.stat:first-child{padding-left:0}.stat:last-child{border:0}.label{font-size:10px;letter-spacing:1.7px;font-weight:800}.number{font-family:'Barlow Condensed',Impact,sans-serif;font-size:40px;line-height:1.1}.number small{font-family:Inter,Arial;font-size:11px;margin-left:5px}.best{color:#d94874}#stage{position:relative;aspect-ratio:1100/535;touch-action:none;overflow:hidden}canvas{display:block;width:100%;height:100%;touch-action:none;cursor:none}#overlay{position:absolute;inset:0;background:#25224435;display:flex;align-items:center;justify-content:center;padding:18px;backdrop-filter:blur(3px)}.card{text-align:center;background:var(--cream);color:var(--ink);border:4px solid var(--ink);box-shadow:9px 10px 0 #252244;border-radius:18px;padding:25px 40px;transform:rotate(-2deg);max-width:550px}.eyebrow{font-size:10px;letter-spacing:2px;font-weight:800}.card h1{font-family:'Barlow Condensed',Impact,sans-serif;font-size:76px;line-height:.85;margin:14px 0;letter-spacing:-1px;text-shadow:3px 3px 0 #ffb9bf}.card h1 span{color:#ea4773}.card p{font-size:13px;line-height:1.6}.primary{background:var(--yellow);font-size:18px;padding:14px 34px}.tiny{font-size:10px!important;color:#72657c}.bottom{display:flex;justify-content:space-between;align-items:center;gap:10px;background:var(--ink);padding:13px 22px;font-size:11px}.status{color:#83f4cf;font-weight:800}.key{display:inline-block;background:#494260;padding:4px 7px;border-radius:4px;color:#fff6dc;margin-right:7px}.below{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:31px}.panel{border:1px solid #514963;border-radius:12px;padding:18px 20px;background:#2d2948}.panel h2{font-family:'Barlow Condensed',Impact,sans-serif;margin:0 0 10px;font-size:23px;letter-spacing:.6px}.steps{display:flex;gap:16px;font-size:11px;line-height:1.6;color:#c9c0db}.steps b{display:block;color:var(--cream);font-size:12px}.steps em{font-style:normal;color:#ff85a1}.gloves{display:flex;gap:8px}.gloves button{font-size:10px;padding:8px 10px;background:#49415e;color:#fff6dc;box-shadow:none;border:2px solid #635777}.gloves button[aria-pressed=true]{border-color:var(--yellow);color:var(--yellow)}.gloves button:disabled{opacity:.5;cursor:default}#unlock{font-size:10px;color:#c6b9d3;margin:10px 0 0}footer{max-width:1100px;margin:23px auto;color:#a59bb8;font-size:10px;display:flex;justify-content:space-between;padding-bottom:20px}#overlay[hidden]{display:none}@media(max-width:650px){header{margin-top:14px}.header-right span{display:none}main{padding:0 10px}.marquee{font-size:8px;letter-spacing:1px}.hud{padding:12px}.stat{padding:0 10px}.number{font-size:30px}.label{font-size:8px;letter-spacing:1px}#stage{aspect-ratio:1100/535}#overlay{position:fixed;z-index:10;background:#10131ddd}.card{padding:16px 20px}.card h1{font-size:54px}.card p{font-size:11px}.below{grid-template-columns:1fr;gap:12px}.bottom{padding:12px;font-size:9px}.bottom span:last-child{display:none}footer{padding:0 12px 20px}.tag{font-size:8px}.primary{font-size:15px;padding:10px 25px}}
+/* Neon studio edition */
+body{background-color:#10131d;background-size:cover;background-attachment:fixed;background-image:radial-gradient(ellipse at 70% 0%,#233345 0,transparent 60%)}.cabinet{border-color:#393746;background:#12151e;box-shadow:0 15px 60px #0008}.hud{background:#1b1d29;color:#fff6dc;border-color:#454253}.stat{border-color:#ffffff15}.best{color:#ff769c}.below .panel{background:#191d29;border-color:#353749}.bottom{background:#1b1d29}.marquee{color:#ababc1}.card{background:#191d29;color:#fff6dc;border-color:#ffe45e;box-shadow:9px 10px 0 #070a10}.card h1{text-shadow:3px 3px 0 #853956}.card .tiny{color:#bdb6ca}.jiggle-control{display:flex;align-items:center;gap:10px;margin-top:13px;font-size:10px;color:#ddd5e5;letter-spacing:1px}.jiggle-control input{accent-color:#ff638b;width:120px}.header-right #mute{background:#242937}.panel h2{color:#fff6dc}
+
+#menu-button{background:#353449;color:#fff6dc;font-size:9px;padding:6px 10px;box-shadow:none;border:1px solid #656078;white-space:nowrap}.stat{min-width:0}.number small{display:inline-block}@media(max-width:650px){.number small{display:block;font-size:8px;line-height:1.4;margin:4px 0 0}.number{font-size:27px}.hud{grid-template-columns:1fr 1fr 1fr}.header-right{gap:0}.header-right #mute{font-size:10px;padding:7px}.bottom{font-size:8px}.tag:after{content:" • PHONE? TURN SIDEWAYS."}}
+</style></head><body>
+<header><div><div class="brand">SLAP THE <span>BOOTY.</span></div><div class="tag">BIG WHAPS. ZERO PLOT.</div></div><div class="header-right"><span>RUBBER-HOSE RULES • ARCADE EDITION</span><button id="mute" aria-label="Mute sound" aria-pressed="false">SOUND ON ♪</button></div></header>
+<main><div class="marquee"><span>THE INTERNATIONAL BOOTY-SLAPPING CHAMPIONSHIP</span><span class="live">FREE PLAY</span></div><div class="cabinet">
+<div class="hud"><div class="stat"><div class="label">LAST SLAP</div><div class="number"><span id="score">0</span><small>PTS</small></div></div><div class="stat"><div class="label">PERSONAL BEST ★</div><div class="number best" id="best">0</div></div><div class="stat"><div class="label">IMPACT QUALITY</div><div class="number"><span id="accuracy">—</span><small id="speed">FIND THE SWEET SPOT</small></div></div></div>
+<div id="stage"><canvas id="game" aria-label="Slap arcade. Move to the left wind-up zone, then swipe right through the target. Touch: drag from the left. Keyboard: hold Space to charge and release to slap." tabindex="0"></canvas><div id="overlay"><div class="card"><div class="eyebrow">ONE HAND. ONE DREAM. ZERO DIGNITY.</div><h1>SLAP THE<br><span>BOOTY!</span></h1><p>One big glove. One ridiculous target.<br>Pull back. Let it rip. Beat your best.</p><button class="primary" id="play">LET'S GET SLAPPY →</button><p class="tiny">PULL LEFT. SWIPE RIGHT. MAKE A RIDICULOUS NUMBER.<br>Mouse / touch • Space to charge • M to mute</p></div></div></div>
+<div class="bottom"><span class="status" id="status">YOUR GLORIOUSLY STUPID NEW OBSESSION.</span><button id="menu-button" aria-label="Open menu">MENU / ESC</button></div></div>
+<div class="below"><section class="panel"><h2>HOW TO WHAP.</h2><div class="steps"><div><em>01 /</em><b>Wind it up.</b>Bring the glove to the left.</div><div><em>02 /</em><b>Let it rip.</b>Swipe right through the target.</div><div><em>03 /</em><b>Go again.</b>Center hits. Bigger numbers.</div></div></section><section class="panel"><h2>THE GLOVE DEPARTMENT.</h2><div class="gloves"><button data-glove="0" aria-pressed="true">CLASSIC GLOVE</button><button data-glove="1" aria-pressed="false">GOLD / 2,000</button><button data-glove="2" aria-pressed="false">COSMIC / 4,000</button></div><label class="jiggle-control" for="jiggle">WOBBLE <input id="jiggle" type="range" min="0" max="3" step="0.1" value="2"><output id="jiggle-value">200%</output></label><p id="unlock">All style. Same slap power. Unlock with your personal best.</p></section></div>
+<footer><span>100% CLOTHED. 200% COMMITTED TO THE BIT.</span><span>NO DOWNLOADS. JUST WHAPS.</span></footer></main>
+<script>
+'use strict';
+// Logical coordinates keep scoring independent of viewport pixel density.
+const W=1100,H=535, target={x:736,y:325,rx:122,ry:65};
+const canvas=document.querySelector('#game'),ctx=canvas.getContext('2d'),$=s=>document.querySelector(s);
+const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
+let jiggle=2;const springs=[{x:0,y:0,vx:0,vy:0},{x:0,y:0,vx:0,vy:0}];
+$('#jiggle').oninput=e=>{jiggle=Number(e.target.value);$('#jiggle-value').textContent=Math.round(jiggle*100)+'%'};
+let saved={};try{saved=JSON.parse(localStorage.getItem('slap-the-booty-v1')||'{}')||{}}catch{}
+let best=Number.isFinite(saved.best)?Math.max(0,saved.best):0,muted=!!saved.muted,glove=clamp(Number(saved.glove)||0,0,2),active=false,armed=false,lastHit=-10000,freezeUntil=0,hitPower=0,slaps=0;
+let hand={x:250,y:325},previous=null,samples=[],particles=[],trail=[],popup=null,chargeAt=0,audio=null,lastFrame=performance.now(),simTime=0;
+function save(){try{localStorage.setItem('slap-the-booty-v1',JSON.stringify({best,muted,glove}))}catch{}}
+function updateUI(){ $('#best').textContent=Math.round(best).toLocaleString();$('#mute').textContent=muted?'SOUND OFF ×':'SOUND ON ♪';$('#mute').setAttribute('aria-pressed',String(muted));$('#mute').setAttribute('aria-label',muted?'Unmute sound':'Mute sound');document.querySelectorAll('[data-glove]').forEach((b,i)=>{b.disabled=best<[0,2000,4000][i];b.setAttribute('aria-pressed',String(i===glove))}) }
+if(best<[0,2000,4000][glove])glove=0;updateUI();
+function sound(power){if(muted)return;try{audio??=new(window.AudioContext||window.webkitAudioContext)();audio.resume();const t=audio.currentTime;const duration=.09+power*.13;const buffer=audio.createBuffer(1,Math.ceil(audio.sampleRate*duration),audio.sampleRate);const data=buffer.getChannelData(0);for(let i=0;i<data.length;i++)data[i]=(Math.random()*2-1)*Math.pow(1-i/data.length,3);const noise=audio.createBufferSource(),gain=audio.createGain();noise.buffer=buffer;gain.gain.value=.2+power*.65;noise.connect(gain).connect(audio.destination);noise.start(t);const osc=audio.createOscillator(),env=audio.createGain();osc.type='triangle';osc.frequency.setValueAtTime(180+power*140,t);osc.frequency.exponentialRampToValueAtTime(45,t+.18);env.gain.setValueAtTime(.25+power*.4,t);env.gain.exponentialRampToValueAtTime(.001,t+.25);osc.connect(env).connect(audio.destination);osc.start(t);osc.stop(t+.26)}catch{}}
+function status(t){$('#status').textContent=t}
+function start(){active=true;armed=false;samples=[];previous=null;chargeAt=0;$('#overlay').hidden=true;status('← PULL THE GLOVE INTO THE WIND-UP ZONE.');canvas.focus();sound(.05)}
+$('#play').onclick=start;$('#menu-button').onclick=menu;$('#mute').onclick=()=>{muted=!muted;save();updateUI()};document.querySelectorAll('[data-glove]').forEach(b=>b.onclick=()=>{glove=Number(b.dataset.glove);save();updateUI()});
+// Swept line/ellipse intersection catches fast swipes even between sparse events.
+function intersect(a,b){const target=currentTarget();const dx=(b.x-a.x)/target.rx,dy=(b.y-a.y)/target.ry,ox=(a.x-target.x)/target.rx,oy=(a.y-target.y)/target.ry,A=dx*dx+dy*dy,B=2*(ox*dx+oy*dy),C=ox*ox+oy*oy-1,D=B*B-4*A*C;if(A<1e-9||D<0)return null;const t=(-B-Math.sqrt(D))/(2*A);return t>=0&&t<=1?{x:a.x+(b.x-a.x)*t,y:a.y+(b.y-a.y)*t}:null}
+function measure(a,b,history){const recent=history.filter(p=>p.t>=b.t-90);const first=recent[0]||a;const dt=Math.max(8,b.t-first.t);return clamp(Math.hypot(b.x-first.x,b.y-first.y)/dt*1000,0,6500)}
+function slap(velocity,quality,point,now){if(now-lastHit<520)return;armed=false;lastHit=now;hitPower=clamp(velocity/5000,0,1);springs.forEach((n,i)=>{n.vx+=(120+hitPower*780)*(i?0.48:1);n.vy-=(50+hitPower*210)*(i?1:.6)});freezeUntil=now+35+hitPower*55;const score=Math.round(velocity*(.35+.65*quality));const record=score>best;best=Math.max(best,score);slaps++;$('#score').textContent=score.toLocaleString();$('#accuracy').textContent=Math.round(quality*100)+'%';$('#speed').textContent=Math.round(velocity*.16)+' SLAP MPH';const word=score>4000?'BOOTYQUAKE!':score>2500?'CHEEK CLAP!':score>1000?'ABSOLUTE WHAP!':score>350?'NICE WHAP!':'POLITE PAT.';popup={text:word,score,record,born:now};for(let i=0;i<26+hitPower*30;i++){let angle=Math.random()*Math.PI*2,speed=120+Math.random()*500;particles.push({x:point.x,y:point.y,vx:Math.cos(angle)*speed,vy:Math.sin(angle)*speed-120,life:.5+Math.random()*.45,max:1,color:['#ffe45e','#ff638b','#fff6dc','#72e5ca'][i%4],size:3+Math.random()*7})}sound(hitPower);status(record?'★ NEW PERSONAL BEST! PULL LEFT AND DO IT AGAIN.':'← PULL LEFT TO RELOAD. THE NEXT ONE COULD BE LEGENDARY.');save();updateUI();if(record&&best>=2000)$('#unlock').textContent=best>=4000?'COSMIC GLOVE UNLOCKED. An intergalactic lack of dignity.':'GOLD GLOVE UNLOCKED. Fancy hands. Questionable hobby.'}
+function move(x,y,t){hand={x:clamp(x,30,W-30),y:clamp(y,30,H-30)};if(!active)return;const p={x:hand.x,y:hand.y,t};if(previous&&t-previous.t>150){samples=[];previous=null}if(hand.x<350&&t-lastHit>520){if(!armed){status('ARMED! SWIPE RIGHT THROUGH THE PADDED SHORTS →');samples=[]}armed=true}if(previous&&armed&&p.x>previous.x){const hit=intersect(previous,p);if(hit){const velocity=measure(previous,p,samples);if(velocity>=160){const target=currentTarget();const quality=clamp(1-Math.abs(hit.y-target.y)/target.ry,0,1);slap(velocity,quality,hit,t)}}}samples.push(p);samples=samples.filter(v=>t-v.t<=110);previous=p;trail.push({...p});if(armed&&p.x>target.x+target.rx){armed=false;status('AIR SLAP! AIM FOR THE TARGET. PULL LEFT TO RETRY.')}}
+function coords(e){const r=canvas.getBoundingClientRect();return{x:(e.clientX-r.left)/r.width*W,y:(e.clientY-r.top)/r.height*H}}
+canvas.addEventListener('pointermove',e=>{if(e.pointerType!=='mouse'&&!e.buttons)return;const p=coords(e);move(p.x,p.y,performance.now())});canvas.addEventListener('pointerdown',e=>{if(!active)return;e.preventDefault();canvas.setPointerCapture(e.pointerId);previous=null;samples=[];const p=coords(e);move(p.x,p.y,performance.now())});canvas.addEventListener('pointerleave',()=>{previous=null;samples=[]});canvas.addEventListener('pointerup',e=>{if(e.pointerType!=='mouse'){previous=null;samples=[]}});canvas.addEventListener('pointercancel',()=>{previous=null;samples=[];armed=false});
+function menu(){active=false;armed=false;chargeAt=0;previous=null;samples=[];$('#overlay').hidden=false;$('#play').textContent='BACK TO THE WHAPPING →'}
+window.addEventListener('keydown',e=>{if(e.code==='KeyM'&&!e.repeat)$('#mute').click();if(e.code==='Escape')menu();if(e.code==='Space'&&e.target.tagName!=='BUTTON'){e.preventDefault();if(!active)start();else if(!e.repeat&&performance.now()-lastHit>520){chargeAt=performance.now();armed=true;hand={x:250,y:target.y};status('CHARGING… RELEASE SPACE TO WHAP!')}}});window.addEventListener('keyup',e=>{if(e.code==='Space'&&chargeAt&&active){e.preventDefault();const t=performance.now(),v=clamp((t-chargeAt)/900,0,1)*4700+250;chargeAt=0;hand={x:target.x,y:target.y};slap(v,1,{x:target.x-60,y:target.y},t)}});window.addEventListener('blur',()=>{chargeAt=0;armed=false;previous=null;samples=[]});
+function path(points,fill,stroke='#252244',width=5){ctx.beginPath();points(ctx);ctx.fillStyle=fill;ctx.fill();if(stroke){ctx.strokeStyle=stroke;ctx.lineWidth=width;ctx.lineJoin='round';ctx.lineCap='round';ctx.stroke()}}
+function ellipse(x,y,rx,ry,fill,stroke='#252244',width=5){path(c=>c.ellipse(x,y,rx,ry,0,0,Math.PI*2),fill,stroke,width)}
+function line(x,y,x2,y2,color='#252244',w=5){ctx.beginPath();ctx.moveTo(x,y);ctx.lineTo(x2,y2);ctx.strokeStyle=color;ctx.lineWidth=w;ctx.lineCap='round';ctx.stroke()}
+function text(s,x,y,size,color='#252244',align='center',font='Barlow Condensed'){ctx.font=`900 ${size}px "${font}",Impact,sans-serif`;ctx.textAlign=align;ctx.fillStyle=color;ctx.fillText(s,x,y)}
+function roundRect(x,y,w,h,r,fill,stroke='#252244',width=4){path(c=>c.roundRect(x,y,w,h,r),fill,stroke,width)}
+// Two coupled, damped springs: the oversized padding leads, the body follows.
+// Substeps keep repeated hard hits stable even on a slow display.
+function integratePhysics(dt){
+ const steps=Math.max(1,Math.ceil(dt/(1/240))),h=dt/steps;
+ for(let step=0;step<steps;step++){
+  const before=springs.map(n=>({...n}));
+  springs.forEach((n,i)=>{
+   const other=before[1-i];
+   n.vx+=(-94*n.x-5.4*n.vx+24*(other.x-n.x))*h;
+   n.vy+=(-128*n.y-6.2*n.vy+18*(other.y-n.y))*h;
+   n.x+=n.vx*h;n.y+=n.vy*h;
+   if(Math.abs(n.x)>65){n.x=clamp(n.x,-65,65);n.vx*=-.2}
+   if(Math.abs(n.y)>40){n.y=clamp(n.y,-40,40);n.vy*=-.2}
+  });
+ }
+}
+function cartoonPose(){
+ const a=springs[0],b=springs[1],drive=Math.tanh((a.x+b.x)/90)*jiggle;
+ const sx=clamp(1+drive*.22,.7,1.5);
+ return{x:target.x+(a.x+b.x)*.27*jiggle,y:target.y+(a.y+b.y)*.2*jiggle,sx,sy:1/Math.sqrt(sx),shear:clamp((a.x-b.x)*.003*jiggle,-.23,.23),tilt:drive*.055};
+}
+function currentTarget(){const p=cartoonPose();return{x:p.x,y:p.y,rx:target.rx*p.sx,ry:target.ry*p.sy}}
+function drawEmma(now){
+ const p=cartoonPose(),lean=(p.x-target.x)*.28;
+ ellipse(736,496,157,16,'#0006',null);
+ // Planted oversized trainers, long striped socks, and flexible legs.
+ for(const side of [-1,1]){
+  const foot=736+side*83,hip=p.x+side*67*p.sx;
+  line(hip,p.y+48*p.sy,foot,457,'#20213a',35);
+  line(hip,p.y+48*p.sy,foot,457,'#efb38d',25);
+  line(foot,425,foot,466,'#20213a',32);line(foot,426,foot,465,'#fff5da',23);
+  line(foot-9,439,foot+9,439,'#ec5d8e',5);line(foot-9,449,foot+9,449,'#ec5d8e',5);
+  roundRect(foot-37,461,79,29,12,'#fff5da');line(foot-32,482,foot+35,482,'#69cfb9',5);
+ }
+ ctx.save();ctx.translate(lean,0);ctx.translate(736,279);ctx.rotate(p.tilt);ctx.translate(-736,-279);
+ // Back of a loose jersey, with raised elbows and foam elbow guards.
+ path(c=>{c.moveTo(683,220);c.quadraticCurveTo(636,195,626,232);c.quadraticCurveTo(622,260,661,285);c.lineTo(677,264);c.quadraticCurveTo(643,241,654,233);c.lineTo(684,249);c.closePath()},'#efb38d');
+ path(c=>{c.moveTo(788,220);c.quadraticCurveTo(834,195,846,232);c.quadraticCurveTo(850,260,811,285);c.lineTo(795,264);c.quadraticCurveTo(829,241,818,233);c.lineTo(788,249);c.closePath()},'#efb38d');
+ ellipse(635,237,17,22,'#ffe45e');ellipse(837,237,17,22,'#ffe45e');
+ const shirt=ctx.createLinearGradient(675,205,790,300);shirt.addColorStop(0,'#9aefcc');shirt.addColorStop(.6,'#58c7b1');shirt.addColorStop(1,'#268b8c');
+ path(c=>{c.moveTo(698,207);c.quadraticCurveTo(735,194,773,208);c.lineTo(798,268);c.lineTo(786,294);c.quadraticCurveTo(735,305,682,294);c.lineTo(673,266);c.closePath()},shirt);
+ text('★',736,254,36,'#fff5da');text('STUNT CLUB',736,275,13,'#215a65');
+ // Clearly adult cartoon face in a comically over-the-shoulder pose.
+ ellipse(738,160,43,52,'#efb38d');
+ path(c=>{c.moveTo(694,161);c.bezierCurveTo(670,98,719,84,744,99);c.bezierCurveTo(790,83,797,126,778,151);c.lineTo(763,130);c.quadraticCurveTo(728,152,709,137);c.lineTo(703,166);c.closePath()},'#69405c');
+ ctx.save();ctx.translate(782,122);ctx.rotate(-p.tilt*3+Math.sin(simTime*2)*.025);
+ path(c=>{c.moveTo(0,0);c.bezierCurveTo(55,-37,82,9,63,60);c.quadraticCurveTo(54,86,77,94);c.bezierCurveTo(19,104,32,56,32,36);c.quadraticCurveTo(37,12,0,20);c.closePath()},'#69405c');ctx.restore();
+ ellipse(780,132,9,13,'#ffe45e');ellipse(705,179,7,10,'#ffe45e','#252244',3);
+ roundRect(709,151,29,21,7,'#30283f');roundRect(746,151,29,21,7,'#30283f');line(738,159,746,159);line(715,156,724,156,'#fff5da',3);line(752,156,761,156,'#fff5da',3);
+ path(c=>{c.moveTo(727,182);c.quadraticCurveTo(744,189,760,179);c.quadraticCurveTo(748,207,727,182);c.closePath()},'#fff5da','#252244',3);
+ ctx.restore();
+ // One oversized piece of protective padding, with long opaque short legs.
+ // Curves and seams are drawn under the same transform so fabric never tears.
+ ctx.save();ctx.translate(p.x,p.y);ctx.transform(p.sx,0,p.shear,p.sy,0,0);
+ const shorts=ctx.createLinearGradient(-130,-55,130,82);shorts.addColorStop(0,'#ff92b6');shorts.addColorStop(.45,'#f36398');shorts.addColorStop(1,'#ba417d');
+ path(c=>{c.moveTo(-62,-54);c.bezierCurveTo(-148,-54,-161,19,-135,64);c.quadraticCurveTo(-118,86,-38,82);c.lineTo(0,68);c.lineTo(38,82);c.quadraticCurveTo(118,86,135,64);c.bezierCurveTo(161,19,148,-54,62,-54);c.closePath()},shorts,'#252244',6);
+ path(c=>{c.moveTo(-62,-54);c.quadraticCurveTo(0,-37,62,-54);c.lineTo(76,-36);c.quadraticCurveTo(0,-14,-76,-36);c.closePath()},'#ffe45e');
+ // Quilted panels read as an absurd padded stunt suit, not exposed anatomy.
+ for(const side of [-1,1]){ctx.save();ctx.scale(side,1);path(c=>{c.moveTo(44,-9);c.lineTo(101,-8);c.lineTo(110,29);c.lineTo(83,47);c.lineTo(42,31);c.closePath()},'#d74d89','#99346a',3);line(49,5,98,5,'#ffb2cd',3);line(71,-6,71,35,'#ff96bd',2);line(45,63,125,61,'#ffe45e',8);ctx.restore()}
+ line(0,-22,0,62,'#9c3b6d',3);
+ roundRect(-24,-25,48,32,9,'#fff5da','#252244',3);text('WHAP',0,-4,12);
+ ctx.restore();
+ if(active){const t=currentTarget();ctx.save();ctx.globalAlpha=armed?.9:.42;ellipse(t.x,t.y,20,20,'#fff5da10','#fff5da',2);line(t.x-30,t.y,t.x-13,t.y,'#fff5da',2);line(t.x+13,t.y,t.x+30,t.y,'#fff5da',2);line(t.x,t.y-30,t.x,t.y-13,'#fff5da',2);line(t.x,t.y+13,t.x,t.y+30,'#fff5da',2);ctx.restore()}
+}
+
+function drawHand(x,y,now){ctx.save();ctx.translate(x,y);ctx.rotate(armed?-.12:.12);if(chargeAt)ctx.translate(Math.sin(now*.06)*3,0);const color=['#fff6dc','#ffe45e','#b59bff'][glove];ctx.shadowColor='#25224430';ctx.shadowBlur=0;ctx.shadowOffsetX=7;ctx.shadowOffsetY=8;
+ path(c=>{c.moveTo(-73,21);c.lineTo(-66,-18);c.lineTo(-46,-20);c.lineTo(-41,-65);c.quadraticCurveTo(-35,-81,-25,-68);c.lineTo(-24,-32);c.lineTo(-19,-82);c.quadraticCurveTo(-8,-95,0,-78);c.lineTo(-3,-30);c.lineTo(7,-73);c.quadraticCurveTo(20,-84,26,-68);c.lineTo(17,-23);c.lineTo(30,-52);c.quadraticCurveTo(45,-62,50,-47);c.lineTo(37,-3);c.quadraticCurveTo(69,-18,72,0);c.quadraticCurveTo(72,10,40,32);c.quadraticCurveTo(10,60,-39,36);c.closePath()},color);
+ ctx.shadowOffsetX=0;ctx.shadowOffsetY=0;roundRect(-82,-26,29,64,7,glove===2?'#ff638b':'#75d8c2');line(-26,5,15,12,'#25224433',3);line(-28,18,4,24,'#25224433',3);ctx.restore()}
+function draw(now){const dt=Math.min((now-lastFrame)/1000,.033);lastFrame=now;const frozen=now<freezeUntil;if(!frozen){simTime+=dt;integratePhysics(dt)}const dpr=Math.min(devicePixelRatio||1,3.5),r=canvas.getBoundingClientRect();if(canvas.width!==Math.round(r.width*dpr)||canvas.height!==Math.round(r.height*dpr)){canvas.width=Math.round(r.width*dpr);canvas.height=Math.round(r.height*dpr)}ctx.setTransform(canvas.width/W,0,0,canvas.height/H,0,0);ctx.clearRect(0,0,W,H);ctx.save();const age=(now-lastHit)/1000,shake=age<.45?(1-age/.45)*hitPower*15:0;ctx.translate(Math.sin(now*1.3)*shake,Math.cos(now*.9)*shake*.65);
+ const backdrop=ctx.createLinearGradient(0,0,W,H);backdrop.addColorStop(0,'#14232f');backdrop.addColorStop(.55,'#1a2030');backdrop.addColorStop(1,'#382139');ctx.fillStyle=backdrop;ctx.fillRect(-20,-20,W+40,H+40);
+ const glow=ctx.createRadialGradient(736,255,10,736,255,370);glow.addColorStop(0,'#629d9e3a');glow.addColorStop(1,'#629d9e00');ctx.fillStyle=glow;ctx.fillRect(0,0,W,H);
+ for(let i=0;i<6;i++){line(55+i*195,0,55+i*195,423,'#ffffff06',1)}
+ ctx.shadowColor='#ff638b';ctx.shadowBlur=22;line(965,40,965,399,'#ff638b',5);ctx.shadowColor='#72e5ca';line(534,40,534,399,'#72e5ca',5);ctx.shadowBlur=0;
+ ctx.fillStyle='#111720';ctx.fillRect(0,426,W,110);for(let i=0;i<14;i++)line(i*120-200,535,550+(i*120-550)*.65,426,'#a9cce713',1);line(0,468,W,468,'#a9cce713',1);line(0,519,W,519,'#a9cce713',1);
+ ellipse(736,510,193,32,'#8ce9d70b','#72e5ca55',2);ellipse(736,510,162,22,'#ff638b09','#ff638b22',1);
+ text('STUNT LAB / 01',924,80,15,'#e7bbd3');text('BOUNCE DEPT.',941,105,24,'#fff6dc');
+ ctx.save();ctx.globalAlpha=active?.95:.5;ctx.setLineDash([9,9]);roundRect(86,160,244,184,18,armed?'#76e1bf35':'#fff6dc25',armed?'#339c82':'#bb7e89',3);ctx.setLineDash([]);text(armed?'LOCKED & LOADED':'WIND-UP ZONE',208,195,22,armed?'#28765f':'#c4abc3');text('← PULL BACK',208,316,16,'#995467');ctx.restore();
+ if(active&&!popup){text(armed?'SEND IT! →':'← WIND UP. THEN WHAP.',395,115,25,'#995467')}
+ drawEmma(frozen?lastHit+35:now);
+ if(active){trail=trail.filter(p=>now-p.t<130);if(trail.length>1){ctx.beginPath();trail.forEach((p,i)=>i?ctx.lineTo(p.x,p.y):ctx.moveTo(p.x,p.y));ctx.strokeStyle='#fff6dc80';ctx.lineWidth=20;ctx.lineCap='round';ctx.stroke()}drawHand(hand.x,hand.y,now)}else drawHand(275,330+Math.sin(simTime*2)*10,now);
+ if(!frozen)particles.forEach(p=>{p.life-=dt;p.x+=p.vx*dt;p.y+=p.vy*dt;p.vy+=700*dt});particles=particles.filter(p=>p.life>0);particles.forEach(p=>{ctx.globalAlpha=clamp(p.life*2,0,1);ctx.fillStyle=p.color;ctx.fillRect(p.x,p.y,p.size,p.size/2)});ctx.globalAlpha=1;
+ if(age<.23){for(let i=0;i<10;i++){const a=i*Math.PI/5;line(target.x+Math.cos(a)*100,target.y+Math.sin(a)*78,target.x+Math.cos(a)*(140+hitPower*50),target.y+Math.sin(a)*(110+hitPower*35),'#fff6dc',5)}}
+ if(popup){const a=(now-popup.born)/1000;ctx.save();ctx.globalAlpha=clamp(2.3-a,0,1);ctx.translate(334,365-Math.min(a,1)*8);ctx.rotate(-.045);text(popup.text,0,20,49,'#fff6dc');text('+'+popup.score.toLocaleString(),0,72,47,'#ff769c');if(popup.record){roundRect(-96,87,192,27,5,'#ffe45e',null);text('★ NEW PERSONAL BEST ★',0,106,15)}ctx.restore();if(a>2.3)popup=null}
+ if(chargeAt){roundRect(102,421,214,16,8,'#252244',null);roundRect(106,425,Math.max(1,206*clamp((now-chargeAt)/900,0,1)),8,4,'#ffe45e',null)}
+ if(!popup){text('ALL CHEEK. NO CHILL.',223,477,22,'#c4abc3');text('BIG PADDING. EXTREMELY QUESTIONABLE SPORT.',223,497,10,'#897f9b');}ctx.restore();requestAnimationFrame(draw)}
+requestAnimationFrame(draw);
+</script></body></html>
+
+

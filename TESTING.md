@@ -1,17 +1,11 @@
-# Cartoon update verification
+# 3D update verification
 
-`node tests.cjs`: 19 checks pass. Coverage includes swept hits and misses, capped velocity, arming, perfect accuracy, double-score prevention, retries, glancing hits, idle-pointer handling, menu reset, storage persistence/fallback, rendering, settling, enlarged target geometry, collision following costume motion, bounded scale at maximum wobble, zero wobble, and a visible rebound through the resting position.
+16 deterministic gameplay checks pass: swept hits/misses, velocity, arming, scoring once, retry, quality, pointer idle, menu, persistence/fallback, drawing, spring settling, projected target, and loading gate. Deformation tests pass: rest stability, bounded recoil, intensity clamp, pinned head/feet, and no accumulated drift.
 
-Local browser automated input replays:
+Local browser input replay: two consecutive target swipes scored 3,324 at 90% quality and 3,835 at 88%; retry worked and the gold glove unlocked. The actual textured GLB was visually inspected in the game from the rear three-quarter angle. The final renderer uses supported PCF shadows.
 
-- Started game and hit the visible enlarged target: 6,066 points at 90% quality.
-- Swiped above the costume: miss, with score unchanged.
-- Increased Wobble to 300%, then hit again: 6,263 points at 94% quality.
-- Inspected resting and impact frames: squash/stretch stays within the arena and legs follow the moving padding while shoes remain planted.
-- No browser warnings or errors were reported.
+These are automated input replays and visual checks, not human mouse-feel testing. Touchscreen feel and audio have not been independently assessed.
 
-These are automated input replays and visual checks, not a human mouse-feel assessment. Physical touchscreen feel and audio playback have not been independently assessed. Existing desktop/mobile UI remains responsive; small phones work best in landscape. This update changes the character, target geometry and physics rather than page layout.
+Collision is a projected ellipse, not exact mesh contact. Garment recoil uses coupled springs and vertex deformation, not a full soft-body simulation. A single image cannot specify unseen geometry precisely. WebGL is required; low-end devices may run slowly. Best scores are browser-local.
 
-## Known limits
-
-The collision is an ellipse approximating the costume rather than a per-pixel mask. Cartoon motion uses coupled springs and affine deformation, not full 3D soft-body simulation. High scores are browser-local and not tamper-proof.
+Additional local browser checks: best score 3,835 survived reload; an above-target swipe reported AIR SLAP and left the score unchanged; M toggled mute successfully.
