@@ -55,8 +55,8 @@ function integratePhysics(dt){
   const before=springs.map(n=>({...n}));
   springs.forEach((n,i)=>{
    const other=before[1-i];
-   n.vx+=(-94*n.x-5.4*n.vx+24*(other.x-n.x))*h;
-   n.vy+=(-128*n.y-6.2*n.vy+18*(other.y-n.y))*h;
+   n.vx+=(-120*n.x-4.8*n.vx+24*(other.x-n.x))*h;
+   n.vy+=(-150*n.y-5.5*n.vy+18*(other.y-n.y))*h;
    n.x+=n.vx*h;n.y+=n.vy*h;
    if(Math.abs(n.x)>65){n.x=clamp(n.x,-65,65);n.vx*=-.2}
    if(Math.abs(n.y)>40){n.y=clamp(n.y,-40,40);n.vy*=-.2}

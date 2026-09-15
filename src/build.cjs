@@ -1,6 +1,7 @@
 const fs=require('node:fs'),path=require('node:path');
 const root=__dirname,original=fs.readFileSync(path.join(__dirname,'game-template.html'),'utf8');
 let s=original;
+s=s.replace('</style>',()=>fs.readFileSync(path.join(root,'arcade.css'),'utf8')+'</style>');
 // Keep the regression-testable game script first; the renderer is loaded after it.
 // Until the asset is ready, the menu remains visible and the start button disabled.
 s=s.replace('RUBBER-HOSE RULES • ARCADE EDITION','3D STUNT STUDIO • ARCADE EDITION');

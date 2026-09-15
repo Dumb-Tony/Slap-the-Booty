@@ -2,7 +2,9 @@ import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
 import { clothOffset, createClothMotion } from './cloth.mjs';
+import { createGlove } from './glove.js';
 const sampleMotion=createClothMotion();
+let glovePose;
 
 // Real GLB geometry, physically based materials and lit depth. This module is
 // staged until the reference-based character is available and visually checked.
@@ -33,17 +35,7 @@ function setup(){
  for(const [x,color] of [[-.06,'#76cfc5'],[1.76,'#ff79a2']]){
   const tube=new THREE.Mesh(new THREE.CylinderGeometry(.009,.009,1.8,12),new THREE.MeshBasicMaterial({color}));tube.position.set(x,1.1,-.55);scene.add(tube);
  }
- gloveGroup=new THREE.Group();gloveGroup.name='Slap glove';
- gloveSurface=new THREE.MeshStandardMaterial({color:'#fff5d8',roughness:.55,metalness:.04});
- const cuffMaterial=new THREE.MeshStandardMaterial({color:'#3ec5b4',roughness:.4,metalness:.12});
- const ellipsoid=(name,x,y,z,sx,sy,sz,material=gloveSurface)=>{const m=new THREE.Mesh(new THREE.SphereGeometry(1,24,16),material);m.name=name;m.position.set(x,y,z);m.scale.set(sx,sy,sz);m.castShadow=true;gloveGroup.add(m);return m};
- ellipsoid('Palm',0,0,0,.14,.15,.052);
- for(const [x,y,length,angle] of [[-.10,.16,.16,-.18],[-.037,.21,.20,-.07],[.035,.21,.19,.06],[.10,.16,.15,.18]]){
-  const finger=new THREE.Mesh(new THREE.CapsuleGeometry(.031,length,6,12),gloveSurface);finger.position.set(x,y,0);finger.rotation.z=-angle;finger.castShadow=true;gloveGroup.add(finger);
- }
- const thumb=ellipsoid('Thumb',.155,-.01,.008,.055,.105,.048);thumb.rotation.z=-.85;
- ellipsoid('Cuff',0,-.15,-.012,.14,.056,.075,cuffMaterial);
- gloveGroup.rotation.z=-.3;scene.add(gloveGroup);
+ const handAsset=createGlove();gloveGroup=handAsset.group;gloveSurface=handAsset.surface;glovePose=handAsset.pose;scene.add(gloveGroup);
 }
 async function load(buffer){
  try{
@@ -90,6 +82,6 @@ function render({springs,jiggle,time=0,hand={x:250,y:325},glove=0,active=false})
  const cursor=new THREE.Vector3(hand.x/550-1,1-hand.y/267.5,0).unproject(camera);
  const direction=new THREE.Vector3(0,0,-1).applyQuaternion(camera.quaternion);
  const distance=(.8-cursor.z)/direction.z;cursor.addScaledVector(direction,distance);
- gloveGroup.position.copy(cursor);gloveGroup.visible=active;gloveSurface.color.set(['#fff5d8','#f2c25c','#b59bff'][glove]||'#fff5d8');
+ glovePose(hand,time,springs);gloveGroup.position.copy(cursor);gloveGroup.visible=active;gloveSurface.color.set(['#fff5d8','#f2c25c','#b59bff'][glove]||'#fff5d8');
  renderer.render(scene,camera);return api.canvas;
 }

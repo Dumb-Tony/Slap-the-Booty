@@ -40,3 +40,6 @@ One hand, one target, immediate feedback and a bigger personal best.
 
 ## Cloth response update
 Garment motion uses volume-compensated compression and stretch with 65 ms and 115 ms follow-through delays. Smooth spatial weights pin the waistband, hands, feet and upper body. Rest geometry stays fixed and the hit target follows the same deformation. The existing Wobble control scales this stylized costume response.
+
+## Arcade presentation update
+A cream-and-coral title card, larger score readouts, clearer cosmetic controls and responsive cabinet styling. The glove is a rounded, connected four-digit cartoon shape with a padded cuff, crease details and velocity-responsive tilt. A faster damped spring response sharpens the clothed costume rebound without changing scoring.
