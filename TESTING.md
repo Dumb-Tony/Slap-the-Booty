@@ -1,11 +1,7 @@
-# 3D update verification
+# Cloth motion verification
 
-16 deterministic gameplay checks pass: swept hits/misses, velocity, arming, scoring once, retry, quality, pointer idle, menu, persistence/fallback, drawing, spring settling, projected target, and loading gate. Deformation tests pass: rest stability, bounded recoil, intensity clamp, pinned head/feet, and no accumulated drift.
+16 gameplay regressions passed. Updated deformation tests cover rest, intensity clamps, pinned extremities, smooth center transition, bounded displacement, delayed follow-through, frozen simulation time, settling and opposite-direction rebound.
 
-Local browser input replay: two consecutive target swipes scored 3,324 at 90% quality and 3,835 at 88%; retry worked and the gold glove unlocked. The actual textured GLB was visually inspected in the game from the rear three-quarter angle. The final renderer uses supported PCF shadows.
+Inspected a rendered sequence at 0, 0.12, 0.24, 0.4, 0.6, 0.9, 1.5 and 3 seconds after a hard hit at the default 150% intensity. Costume compression and rebound are visible while head, hands and feet remain planted. Local browser replay produced consecutive scores of 1,381 and 1,485 at 97% quality. No browser warnings or errors were reported.
 
-These are automated input replays and visual checks, not human mouse-feel testing. Touchscreen feel and audio have not been independently assessed.
-
-Collision is a projected ellipse, not exact mesh contact. Garment recoil uses coupled springs and vertex deformation, not a full soft-body simulation. A single image cannot specify unseen geometry precisely. WebGL is required; low-end devices may run slowly. Best scores are browser-local.
-
-Additional local browser checks: best score 3,835 survived reload; an above-target swipe reported AIR SLAP and left the score unchanged; M toggled mute successfully.
+These are synthetic input replays and frame inspections, not a human mouse-feel assessment. This remains a stylized garment deformation, not a full cloth or anatomical soft-body solver. The original tracksuit GLB is unchanged.

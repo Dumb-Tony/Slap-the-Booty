@@ -37,3 +37,6 @@ One hand, one target, immediate feedback and a bigger personal best.
 ## Asset
 
 `assets/emma-3d.glb` is a portable textured mesh reconstructed by Meshy 7 through Higgsfield. It contains 31,201 triangles and one PBR material. The mesh is static; the game supplies garment deformation at runtime. No skeletal animation or full soft-body solver is included. The reference image remains in `assets/emma.png`. Visual quality depends on the generated geometry and texture; this is not a native 4K scan.
+
+## Cloth response update
+Garment motion uses volume-compensated compression and stretch with 65 ms and 115 ms follow-through delays. Smooth spatial weights pin the waistband, hands, feet and upper body. Rest geometry stays fixed and the hit target follows the same deformation. The existing Wobble control scales this stylized costume response.

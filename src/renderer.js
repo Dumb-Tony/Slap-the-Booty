@@ -1,7 +1,8 @@
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
-import { clothOffset } from './cloth.mjs';
+import { clothOffset, createClothMotion } from './cloth.mjs';
+const sampleMotion=createClothMotion();
 
 // Real GLB geometry, physically based materials and lit depth. This module is
 // staged until the reference-based character is available and visually checked.
@@ -71,20 +72,19 @@ function project(point){const p=point.clone().project(camera);return{x:(p.x+1)*5
 function render({springs,jiggle,time=0,hand={x:250,y:325},glove=0,active=false}){
  if(!api.ready)return null;
  actor.rotation.y=api.turn;
- const a=springs[0],b=springs[1],amount=Math.min(jiggle,3);
- const displacement=(a.x+b.x)*.0009*amount,lift=(a.y+b.y)*.0006*amount;
+ const amount=Math.min(jiggle,3),motion=sampleMotion(time,springs);
  for(const part of parts){
   const position=part.geometry.attributes.position,rest=part.rest;
   for(let i=0;i<position.count;i++){
    const k=i*3,x=rest[k],y=rest[k+1],z=rest[k+2];
    // Broad cloth recoil fades continuously above the waist and below the thighs.
    // It never changes rest proportions or exposes underlying anatomy.
-   const moved=clothOffset(x,y,z,springs,amount);
+   const moved=clothOffset(x,y,z,springs,amount,motion);
    position.setXYZ(i,...moved);
   }
   position.needsUpdate=true;part.geometry.computeVertexNormals();
  }
- actor.updateMatrixWorld(true);const c=actor.localToWorld(new THREE.Vector3(displacement,.88+lift,.12));
+ actor.updateMatrixWorld(true);const c=actor.localToWorld(new THREE.Vector3(...clothOffset(0,.88,-.12,springs,amount,motion)));
  const t=project(c),right=project(c.clone().add(new THREE.Vector3(.19,0,0))),top=project(c.clone().add(new THREE.Vector3(0,.13,0)));
  api.target={x:t.x,y:t.y,rx:Math.max(22,Math.abs(right.x-t.x)),ry:Math.max(18,Math.abs(top.y-t.y))};
  const cursor=new THREE.Vector3(hand.x/550-1,1-hand.y/267.5,0).unproject(camera);
